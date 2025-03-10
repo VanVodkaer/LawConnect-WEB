@@ -1,0 +1,72 @@
+/* 底栏主样式 */
+.footer {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 1rem 0;
+  font-family: Arial, sans-serif;
+  margin-top: auto; /* 将底栏推到底部 */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-item {
+  display: flex;
+  align-items: baseline;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.footer-label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  min-width: 70px;
+}
+
+.footer-info {
+  color: #444;
+}
+
+/* 响应式调整 */
+@media screen and (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-item {
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+  }
+
+  .footer-divider {
+    margin-bottom: 1rem;
+  }
+
+  .footer-item {
+    font-size: 0.8rem;
+  }
+}

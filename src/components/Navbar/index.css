@@ -1,0 +1,153 @@
+/* 导航栏主样式 */
+.navbar {
+  background-color: #0044cc; /* 深蓝色背景 */
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Logo样式 */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+/* 菜单样式 */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin: 0;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-link:hover {
+  color: #ffdd57; /* 鼠标悬停时颜色变化 */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #ffdd57;
+  transition: all 0.3s ease;
+}
+
+.navbar-link:hover:after {
+  width: 80%;
+  left: 10%;
+}
+
+/* 日期显示样式 - 修复重叠问题 */
+.navbar-date {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 600;
+  /* 将日期定位在navbar中间位置 */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  margin-top: -0.6rem; /* 微调垂直位置 */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 992px) {
+  /* 屏幕变窄时，移动日期到顶部 */
+  .navbar-container {
+    padding-top: 2rem;
+  }
+
+  .navbar-date {
+    top: 0.5rem;
+    right: 2rem;
+    left: auto;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0;
+  }
+
+  .navbar-menu {
+    width: 100%;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .navbar-date {
+    position: static;
+    margin: 0.5rem 0;
+    transform: none;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-menu {
+    gap: 0.5rem;
+  }
+
+  .navbar-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .navbar-date {
+    font-size: 1rem;
+    padding: 0.1rem 0.4rem;
+  }
+}
