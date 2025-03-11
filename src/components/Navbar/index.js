@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 
 function Navbar() {
@@ -14,30 +15,30 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <a href="/" className="navbar-logo">
+        <Link to="/" className="navbar-logo">
           首页
-        </a>
+        </Link>
         <div className="navbar-date">{currentDate}</div>
         <ul className="navbar-menu">
           <li className="navbar-item">
-            <a href="/home" className="navbar-link">
+            <Link to="/login" className="navbar-link">
               登录
-            </a>
+            </Link>
           </li>
           <li className="navbar-item">
-            <a href="/lawforum" className="navbar-link">
+            <Link to="/register" className="navbar-link">
               注册
-            </a>
+            </Link>
           </li>
           <li className="navbar-item">
-            <a href="/policy" className="navbar-link">
+            <Link to="/feedback" className="navbar-link">
               意见建议
-            </a>
+            </Link>
           </li>
           <li className="navbar-item">
-            <a href="/profile" className="navbar-link">
+            <Link to="/help" className="navbar-link">
               使用帮助
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

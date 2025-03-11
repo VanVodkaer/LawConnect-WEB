@@ -1,15 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./index.css";
 
-function TabNav() {
-  // 初始的activeTab为lawForum，初始的子选项卡为每个Tab的默认项
-  const [activeTab, setActiveTab] = useState("lawForum");
+function Home({ defaultTab }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // 初始的activeTab根据props或路径设置
+  const [activeTab, setActiveTab] = useState(defaultTab || "lawForum");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("最新动态"); // 默认选中法学交流社区的第一个子类别
 
+  // 当defaultTab更改或URL路径更改时更新activeTab
+  useEffect(() => {
+    if (defaultTab) {
+      setActiveTab(defaultTab);
+
+      // 设置相应的默认类别
+      if (defaultTab === "lawForum") {
+        setActiveCategory("最新动态");
+      } else if (defaultTab === "policy") {
+        setActiveCategory("最新政策");
+      } else if (defaultTab === "offlineEvents") {
+        setActiveCategory("线下联动");
+      }
+    } else {
+      // 从URL路径中提取activeTab
+      const path = location.pathname.substring(1);
+      if (path === "lawForum" || path === "policy" || path === "offlineEvents") {
+        setActiveTab(path);
+
+        // 设置相应的默认类别
+        if (path === "lawForum") {
+          setActiveCategory("最新动态");
+        } else if (path === "policy") {
+          setActiveCategory("最新政策");
+        } else if (path === "offlineEvents") {
+          setActiveCategory("线下联动");
+        }
+      }
+    }
+  }, [defaultTab, location.pathname]);
+
   const handleTabClick = (tab) => {
     setActiveTab(tab);
-    // 切换Tab时，重置子类别的默认选中
+    // 导航到相应的路由
+    navigate(`/${tab}`);
+
+    // 重置子类别的默认选中
     if (tab === "lawForum") {
       setActiveCategory("最新动态");
     } else if (tab === "policy") {
@@ -178,4 +216,4 @@ function TabNav() {
   );
 }
 
-export default TabNav;
+export default Home;
