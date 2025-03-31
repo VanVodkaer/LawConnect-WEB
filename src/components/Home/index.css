@@ -66,7 +66,6 @@
   align-items: center;
   height: 34px;
 }
-
 .search-input {
   height: 34px;
   padding: 0 10px;
@@ -78,7 +77,6 @@
   font-size: 14px;
   vertical-align: top;
 }
-
 .search-button {
   height: 34px;
   background-color: #0044cc;
@@ -91,7 +89,6 @@
   box-sizing: border-box;
   margin-top: 0px !important;
 }
-
 /* 内容区域 */
 .tab-content {
   padding: 0.5rem 0;
@@ -159,7 +156,31 @@
 .item-content {
   color: #333;
   line-height: 1.5;
+  flex: 1;
 }
+
+/* 添加文章链接样式 */
+.article-link {
+  color: #333;
+  text-decoration: none;
+  font-size: inherit;
+  line-height: inherit;
+  display: block;
+  width: 100%;
+  transition: color 0.3s ease;
+}
+
+.article-link:hover {
+  color: #0044cc;
+  text-decoration: none;
+}
+
+/* 确保Link不改变布局 */
+.item-content a {
+  display: inline-block;
+  width: 100%;
+}
+
 .list-more {
   text-align: center;
   padding: 0.5rem;

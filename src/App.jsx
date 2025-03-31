@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Feedback from "./components/Feedback";
 import Footer from "./components/Footer";
+import ArticleDetail from "./components/ArticleDetail";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/help" element={<Home />} />
+            <Route path="/article/:id" element={<ArticleDetail />} />
           </Routes>
         </div>
         <Footer />

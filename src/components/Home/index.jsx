@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { Link } from "react-router-dom";
 import ajaxGateway from "../../utils/ajaxGateway";
 import "./index.css";
 
@@ -121,7 +122,11 @@ function Home({ defaultTab }) {
             articles.map((item, index) => (
               <div className="list-item" key={item.id}>
                 <span className="item-number">{index + 1}.</span>
-                <span className="item-content">{item.title}</span>
+                <span className="item-content">
+                  <Link to={`/article/${item.id}`} className="article-link">
+                    {item.title}
+                  </Link>
+                </span>
               </div>
             ))
           ) : (

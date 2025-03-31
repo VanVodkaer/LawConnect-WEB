@@ -1,0 +1,543 @@
+.article-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+}
+
+.article-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.article-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.article-meta {
+  color: #666;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.article-date {
+  margin-right: 15px;
+}
+
+.article-interactions {
+  display: flex;
+  align-items: center;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  color: #666;
+  transition: all 0.3s;
+  border-radius: 4px;
+}
+
+.like-button:hover {
+  background-color: #f5f5f5;
+}
+
+.like-button.liked {
+  color: #ff4d4f;
+}
+
+.like-icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.like-count {
+  font-size: 14px;
+}
+
+.article-comments-count {
+  display: flex;
+  align-items: center;
+  color: #666;
+}
+
+.comment-icon {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.article-content {
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 16px;
+}
+
+.article-content p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.article-comments-section {
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.comments-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 评论表单样式 */
+.comment-form {
+  display: flex;
+  margin-bottom: 30px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.comment-avatar {
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1890ff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.comment-input-container {
+  flex-grow: 1;
+}
+
+.comment-form-inner {
+  width: 100%;
+}
+
+.comment-textarea {
+  width: 100%;
+  border-radius: 4px;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.comment-textarea:focus {
+  border-color: #1890ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.comment-form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-button,
+.login-button,
+.login-button-primary,
+.cancel-button,
+.delete-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.submit-button {
+  background-color: #1890ff;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #40a9ff;
+}
+
+.submit-button:disabled {
+  background-color: #d9d9d9;
+  cursor: not-allowed;
+}
+
+.login-button {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.login-button:hover {
+  background-color: #e0e0e0;
+}
+
+.login-button-primary {
+  background-color: #1890ff;
+  color: white;
+}
+
+.login-button-primary:hover {
+  background-color: #40a9ff;
+}
+
+.cancel-button {
+  background-color: #f0f0f0;
+  color: #333;
+  margin-right: 10px;
+}
+
+.cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+.delete-button {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #ff7875;
+}
+
+.delete-button:disabled {
+  background-color: #ffccc7;
+  cursor: not-allowed;
+}
+
+/* 评论列表样式 */
+.comments-list {
+  margin-top: 20px;
+}
+
+.comment-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s;
+}
+
+.comment-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.comment-user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comment-username {
+  margin-left: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+.comment-content {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #333;
+  padding-left: 40px;
+}
+
+.comment-meta {
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 40px;
+}
+
+.comment-info {
+  display: flex;
+  align-items: center;
+}
+
+.comment-date {
+  margin-right: 15px;
+}
+
+.comment-like-button {
+  background: none;
+  border: none;
+  padding: 2px 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #999;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.comment-like-button:hover {
+  background-color: #f0f0f0;
+}
+
+.comment-like-button.liked {
+  color: #ff4d4f;
+}
+
+.comment-like-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.comment-delete-button {
+  background: none;
+  border: 1px solid #ff4d4f;
+  color: #ff4d4f;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.comment-delete-button:hover {
+  background-color: #fff1f0;
+}
+
+.comment-delete-button:disabled {
+  border-color: #ffccc7;
+  color: #ffccc7;
+  cursor: not-allowed;
+}
+
+.no-comments {
+  color: #999;
+  font-style: italic;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.loading,
+.error-message,
+.not-found {
+  text-align: center;
+  padding: 50px;
+  color: #666;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #f44336;
+}
+
+/* 模态框样式 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.login-modal,
+.delete-modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 360px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-modal h3,
+.delete-modal h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.login-modal p,
+.delete-modal p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-preview {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  max-height: 100px;
+  overflow-y: auto;
+  color: #666;
+}
+
+/* 消息通知 */
+.message-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: slideIn 0.3s ease, fadeOut 0.5s ease 2.5s forwards;
+}
+
+.message-notification.success {
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #52c41a;
+}
+
+.message-notification.error {
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  color: #ff4d4f;
+}
+
+.message-notification.warning {
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  color: #faad14;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .article-detail-container {
+    padding: 15px;
+  }
+
+  .article-title {
+    font-size: 22px;
+  }
+
+  .article-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .article-interactions {
+    margin-top: 10px;
+  }
+
+  .comment-form {
+    flex-direction: column;
+  }
+
+  .comment-avatar {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .comment-content,
+  .comment-meta {
+    padding-left: 0;
+  }
+
+  .login-modal,
+  .delete-modal {
+    width: 90%;
+    max-width: 360px;
+  }
+}
+
+/* 删除评论按钮样式 */
+.delete-comment-button {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #ff4d4f;
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.delete-comment-button:hover {
+  background-color: #fff2f0;
+}
+
+.delete-comment-button:disabled {
+  color: #d9d9d9;
+  cursor: not-allowed;
+  background: none;
+}
+
+/* 删除按钮样式 */
+.delete-button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #ff7875;
+}
+
+/* 确保评论用户名和删除按钮在同一行 */
+.comment-username {
+  margin-left: 10px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
